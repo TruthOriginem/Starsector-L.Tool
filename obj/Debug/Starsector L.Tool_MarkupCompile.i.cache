@@ -1,4 +1,4 @@
-﻿StarsectorLTool
+﻿Starsector L.Tool
 
 
 winexe
@@ -8,13 +8,13 @@ C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLToo
 StarsectorLTool
 none
 false
-CODE_ANALYSIS;DEBUG;TRACE
+DEBUG;TRACE
 C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\App.xaml
 11151548125
 
-6-1953863648
-131254293103
+7-1318369883
+121654848548
 MainWindow.xaml;
 
-False
+True
 
