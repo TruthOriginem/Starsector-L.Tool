@@ -1,0 +1,15 @@
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\bin\Debug\StarsectorLTool.exe.config
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\bin\Debug\StarsectorLTool.exe
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\bin\Debug\StarsectorLTool.pdb
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\MainWindow.g.cs
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\App.g.cs
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool_MarkupCompile.cache
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool_MarkupCompile.lref
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\MainWindow.baml
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.g.resources
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.Properties.Resources.resources
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.csproj.GenerateResource.Cache
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.exe
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.pdb
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\bin\Debug\StarsectorLTool.exe.CodeAnalysisLog.xml
+C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\bin\Debug\StarsectorLTool.exe.lastcodeanalysissucceeded
