@@ -22,7 +22,6 @@ namespace StarsectorLTool
                 lab_vmTips.Content = "-请将本应用放在远行星号根目录-";
                 Apply.IsEnabled = false;
                 co_xms.IsEnabled = false;
-                co_xmx.IsEnabled = false;
                 return;
             }
             string path = Directory.GetCurrentDirectory() + "\\" + "vmparams";
@@ -53,7 +52,6 @@ namespace StarsectorLTool
                 xmx_tn.Content = data.xmx;
 
                 co_xms.Items.Clear();
-                co_xmx.Items.Clear();
                 for (int i = 1536; i <= 8192; i += 512)
                 {
                     var item = new ComboBoxItem();
@@ -61,10 +59,8 @@ namespace StarsectorLTool
                     co_xms.Items.Add(item);
                     item = new ComboBoxItem();
                     item.Content = i + "m ";
-                    co_xmx.Items.Add(item);
                 }
                 co_xms.SelectedIndex = 0;
-                co_xmx.SelectedIndex = 0;
             }
             catch
             {
@@ -76,13 +72,12 @@ namespace StarsectorLTool
         {
             var data = Global.VM_DATA;
             ComboBoxItem sitem = co_xms.SelectedItem as ComboBoxItem;
-            ComboBoxItem mitem = co_xmx.SelectedItem as ComboBoxItem;
             StringBuilder sb = new StringBuilder();
             sb.Append(data.beforeXms);
             sb.Append("-Xms");
             sb.Append(sitem.Content);
             sb.Append("-Xmx");
-            sb.Append(mitem.Content);
+            sb.Append(sitem.Content);
             sb.Append(data.afterAndContainXss);
             try
             {
@@ -108,7 +103,6 @@ namespace StarsectorLTool
             data.afterAndContainXss = "-Xss" + x[1];
             return data;
         }
-
 
     }
 }

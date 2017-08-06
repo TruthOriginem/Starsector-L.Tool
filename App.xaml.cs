@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -30,7 +31,7 @@ namespace StarsectorLTool
                 MessageBox.Show("已有一个程序运行");
                 Environment.Exit(0);
             }
-
+            //Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
         }
     }
 }
