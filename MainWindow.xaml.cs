@@ -79,15 +79,21 @@ namespace StarsectorLTool
                 xmx_tn.Content = data.xmx;
 
                 combo_xm.Items.Clear();
+                int totalIndex = 0;
+                int currIndex = 0;
                 for (int i = 1536; i <= 8192; i += 512)
                 {
                     var item = new ComboBoxItem();
-                    item.Content = i + "m ";
+                    var content = i + "m";
+                    item.Content = content;
+                    if (data.xms.StartsWith(content))
+                    {
+                        currIndex = totalIndex;
+                    }
                     combo_xm.Items.Add(item);
-                    item = new ComboBoxItem();
-                    item.Content = i + "m ";
+                    totalIndex++;
                 }
-                combo_xm.SelectedIndex = 0;
+                combo_xm.SelectedIndex = currIndex;
             }
             catch
             {

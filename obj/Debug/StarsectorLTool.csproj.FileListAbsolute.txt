@@ -26,3 +26,5 @@ D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.csproj.
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.csproj.CoreCompileInputs.cache
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.exe
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.pdb
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ProgressDialog.baml
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ProgressDialog.g.cs

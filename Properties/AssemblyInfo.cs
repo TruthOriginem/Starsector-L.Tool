@@ -8,7 +8,7 @@ using System.Windows;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("Starsector L.Tool")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("一个辅助远行星号的程序。")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Originem")]
 [assembly: AssemblyProduct("Starsector L.Tool")]
@@ -51,5 +51,5 @@ using System.Windows;
 //可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”: :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.0.1")]
-[assembly: AssemblyFileVersion("0.1.0.1")]
+[assembly: AssemblyVersion("0.1.0.2")]
+[assembly: AssemblyFileVersion("0.1.0.0")]

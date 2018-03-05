@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StarsectorLTool"
         mc:Ignorable="d"
-        Title="Starsector L.Tool" Height="400" Width="300" ResizeMode="NoResize" Icon="Image/ltool_icon.ico">
+        Title="Starsector L.Tool" Height="400" Width="300" ResizeMode="NoResize" Icon="Image/ltool_icon.ico" WindowStartupLocation="CenterScreen">
     <Grid x:Name="MainGrid" Margin="0,0,-0.4,0.4">
         <Grid.Background>
             <ImageBrush ImageSource="Image/bg.jpg" Stretch="UniformToFill"/>
@@ -57,7 +57,7 @@
             </Label.Foreground>
         </Label>
         <ComboBox x:Name="combo_xm" Margin="154,188,73.4,0" VerticalAlignment="Top"/>
-        <Label x:Name="sign" Content="Originem" VerticalAlignment="Bottom" FontSize="9" Background="{x:Null}" Height="22" Width="53" HorizontalAlignment="Right" Margin="0,0,-2,0">
+        <Label x:Name="sign" Content="Originem" VerticalAlignment="Bottom" FontSize="9" Background="{x:Null}" Height="22" Width="51" HorizontalAlignment="Right" Margin="0,0,0.4,-0.4">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF9000FF" Offset="0"/>
@@ -66,7 +66,7 @@
             </Label.Foreground>
         </Label>
         <Label Content="将鼠标移动到个别用语上以获得提示" Height="25" Margin="2,27,0.4,0" Width="292" Background="{x:Null}" Foreground="#FF898989" FontSize="10" VerticalAlignment="Top" RenderTransformOrigin="0.35,0.406" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button x:Name="btn_StartGame" Content="启动游戏" HorizontalAlignment="Center" Margin="111,283,109.4,0" VerticalAlignment="Top" Width="74" Height="34" Click="StartGame"/>
+        <Button x:Name="btn_StartGame" Content="启动游戏" HorizontalAlignment="Center" Margin="111,278,109.4,0" VerticalAlignment="Top" Width="74" Height="34" Click="StartGame"/>
         <CheckBox x:Name="ckb_ExitAfterGame" Content="启动后关闭本程序" Height="25" Margin="88,0,83.4,23.6" VerticalAlignment="Bottom" Width="123" Foreground="#FFBEF9FF" IsChecked="True" BorderBrush="#FF525D6C" Background="White"/>
         <Button x:Name="btn_Help" Content="帮助" HorizontalAlignment="Left" Height="22" Margin="226,188,0,0" VerticalAlignment="Top" Width="27" Background="#FFCAE4AA" Click="Btn_Help_Click"/>
 
