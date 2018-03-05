@@ -1,5 +1,6 @@
 ﻿using StarsectorLTool.Src.Global;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows;
@@ -16,28 +17,54 @@ namespace StarsectorLTool
         public MainWindow()
         {
             InitializeComponent();
+            Global.STARSECTOR_EXE_PATH = Directory.GetCurrentDirectory() + "\\" + "starsector.exe";
 
-            if (!File.Exists(Directory.GetCurrentDirectory() + "\\" + "starsector.exe"))
+            if (!File.Exists(Global.STARSECTOR_EXE_PATH))
             {
                 lab_vmTips.Content = "-请将本应用放在远行星号根目录-";
                 Apply.IsEnabled = false;
-                co_xms.IsEnabled = false;
+                combo_xm.IsEnabled = false;
+                btn_StartGame.IsEnabled = false;
                 return;
             }
             string path = Directory.GetCurrentDirectory() + "\\" + "vmparams";
             if (File.Exists(Directory.GetCurrentDirectory() + "\\" + "vmparams"))
             {
-                lab_vmTips.Content = "-已检测到vmparams-";
+                lab_vmTips.Content = "-已检测到vmparams:感谢使用远行星号L.Tool工具-";
                 lab_vmTips.Foreground = Brushes.Green;
                 Global.VM_PATH = path;
                 ReadVmparams();
             }
         }
-
+        /// <summary>
+        /// 开启游戏。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void StartGame(object sender, RoutedEventArgs e)
+        {
+            if (Global.VM_PATH != null)
+            {
+                try
+                {
+                    ProcessStartInfo processStartInfo = new ProcessStartInfo(Global.STARSECTOR_EXE_PATH);
+                    Process.Start(processStartInfo);
+                    if (ckb_ExitAfterGame.IsChecked ?? true)
+                    {
+                        Environment.Exit(0);
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
         private void Apply_Click(object sender, RoutedEventArgs e)
         {
             WriteVmparams();
         }
+
         /// <summary>
         /// 读取Vmparams。
         /// </summary>
@@ -51,16 +78,16 @@ namespace StarsectorLTool
                 xms_tn.Content = data.xms;
                 xmx_tn.Content = data.xmx;
 
-                co_xms.Items.Clear();
+                combo_xm.Items.Clear();
                 for (int i = 1536; i <= 8192; i += 512)
                 {
                     var item = new ComboBoxItem();
                     item.Content = i + "m ";
-                    co_xms.Items.Add(item);
+                    combo_xm.Items.Add(item);
                     item = new ComboBoxItem();
                     item.Content = i + "m ";
                 }
-                co_xms.SelectedIndex = 0;
+                combo_xm.SelectedIndex = 0;
             }
             catch
             {
@@ -71,7 +98,7 @@ namespace StarsectorLTool
         void WriteVmparams()
         {
             var data = Global.VM_DATA;
-            ComboBoxItem sitem = co_xms.SelectedItem as ComboBoxItem;
+            ComboBoxItem sitem = combo_xm.SelectedItem as ComboBoxItem;
             StringBuilder sb = new StringBuilder();
             sb.Append(data.beforeXms);
             sb.Append("-Xms");
@@ -101,8 +128,18 @@ namespace StarsectorLTool
             x = x[1].Split(new string[] { "-Xss" }, StringSplitOptions.RemoveEmptyEntries);
             data.xmx = x[0];
             data.afterAndContainXss = "-Xss" + x[1];
+            data.rawVm = text;
             return data;
         }
 
+        private void Btn_Help_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("遗憾的是，精确预测内存使用情况是不可能的。这里只有一些粗略估计：" +
+                "\n\n1.3G内存：在32位系统上你能分配的最大数值，加载一大堆势力mod将会导致崩溃，特别是在存档的时候。不要使用DynaSector（势力开局）。" +
+                "\n\n2G(2048m)内存：对于大概两三个中等势力来说很不错，（比如说黑石船坞，SCY），但是如果你加更多的势力的话，很容易存档崩溃。如果你的系统内存只有4G，这个就是你的极限。" +
+                "\n\n3G(3072m)内存：足够应付几个大型势力（比如说星际帝国，暗影）和一些中等势力。尽管如此，不要太过火。推荐给那些有着6G系统内存的人。" +
+                "\n\n4G(4096m)内存：大多数mod组合需要在4G内存下运行；只有一些最疯狂mod组合会超过这个（一打或更多的势力，加上Nexerelin大乱斗和DynaSector势力开局）。推荐给那些有着8G系统内存的人。" +
+                "\n\n6G(6144m)内存：就算你同时启用了所有mod，6G应该还是足够的。并不推荐这个配置，除非你有成吨的mod，并且你也有12G以上的系统内存。", "我该分配多少内存？");
+        }
     }
 }

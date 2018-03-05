@@ -1,0 +1,26 @@
+﻿<Window x:Class="MyProgressDialog.ProgressDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ProgressDialog"  Width="310" Height="100" 
+        Topmost="True" ShowInTaskbar="False" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" ResizeMode="NoResize" BorderBrush="Silver" BorderThickness="1">
+    <Grid>
+        <Grid Margin="5" Background="Honeydew">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="处理中..."  Name="label1"  Grid.Row="0" VerticalAlignment="Center" x:FieldModifier="private" />
+            <ProgressBar Name="progressBar1" Grid.Row="1" Maximum="100" x:FieldModifier="private" />
+            <Grid Grid.Row="2" Margin="0,5" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock  Name="infoBlock"  VerticalAlignment="Center" x:FieldModifier="private" />
+                <Button Grid.Column="1" Content="取消" Width="50" Click="Button_Click" HorizontalAlignment="Right" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

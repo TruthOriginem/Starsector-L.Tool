@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\
 StarsectorLTool
 none
 false
 DEBUG;TRACE
-C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\App.xaml
-11151548125
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\App.xaml
+2-1646310458
 
-9-1494104005
+9-1054723416
 121654848548
-MainWindow.xaml;
+MainWindow.xaml;Windows\ProgressDialog.xaml;
 
 False
 
