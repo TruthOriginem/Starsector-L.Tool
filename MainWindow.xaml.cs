@@ -1,4 +1,5 @@
-﻿using StarsectorLTool.Src.Global;
+﻿using AutoUpdaterDotNET;
+using StarsectorLTool.Src.Global;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -56,6 +57,7 @@ namespace StarsectorLTool
                 }
                 ReadVmparams();
             }
+            AutoUpdater.Start(Global.VERSION_URL);
         }
         /// <summary>
         /// 开启游戏。

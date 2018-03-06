@@ -5,7 +5,7 @@ namespace StarsectorLTool.Src.Global
 {
     static class Global
     {
-        public const string UPDATE_URL = ""
+        public const string VERSION_URL = "https://raw.githubusercontent.com/TruthOriginem/Starsector-L.Tool/master/Properties/verison.xml";
         public const string TEST_VM_PATH = "E:\\Starsector08\\Starsector";
         public static string STARSECTOR_EXE_PATH;
         public static string VM_PATH;
