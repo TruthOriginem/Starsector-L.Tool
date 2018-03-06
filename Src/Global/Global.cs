@@ -1,5 +1,8 @@
 ﻿using Microsoft.Win32;
+using System;
 using System.Security.Principal;
+using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace StarsectorLTool.Src.Global
 {
@@ -41,14 +44,36 @@ namespace StarsectorLTool.Src.Global
     }
     struct VmparamsData
     {
-        public string beforeXms;
-        public string afterAndContainXss;
-        public string xms;
-        public string xmx;
         /// <summary>
         /// vmparams文件字符串。
         /// </summary>
         public string rawVm;
+        public string xmsx;
+
+        /// <summary>
+        /// 将文件内容解析为VmparamsData
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static VmparamsData ParseStringToData(string text)
+        {
+            VmparamsData data = new VmparamsData();
+            data.rawVm = text;
+            Regex regex = new Regex(@"(?:\-[xX][mM][sS])(.+?)\b");
+            data.xmsx = regex.Match(text).Groups[1].Value;
+            return data;
+        }
+        /// <summary>
+        /// 从指定VmparamsData中将指定的内存字符串（如4096m）替换进应有的位置
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="targetSetting"></param>
+        /// <returns></returns>
+        public static string ReplaceXMSetting(VmparamsData data, string targetSetting)
+        {
+            Regex regex = new Regex(@"(\-[xX][mM][sSxX])(.+?)\b");
+            return regex.Replace(data.rawVm, "${1}" + targetSetting);
+        }
     }
 
     struct SSRegisterData

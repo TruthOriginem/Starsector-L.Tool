@@ -86,6 +86,11 @@ namespace StarsectorLTool
                 }
             }
         }
+        /// <summary>
+        /// 点击“应用”按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Apply_Click(object sender, RoutedEventArgs e)
         {
             WriteVmparams();
@@ -99,10 +104,10 @@ namespace StarsectorLTool
             try
             {
                 string all = File.ReadAllText(Global.VM_PATH);
-                var data = ParseStringToData(all);
+                var data = VmparamsData.ParseStringToData(all);
                 Global.VM_DATA = data;
-                xms_tn.Content = data.xms;
-                xmx_tn.Content = data.xmx;
+                xms_tn.Content = data.xmsx;
+                xmx_tn.Content = data.xmsx;
 
                 combo_xm.Items.Clear();
                 int totalIndex = 0;
@@ -111,7 +116,7 @@ namespace StarsectorLTool
                 {
                     var item = new ComboBoxItem();
                     var content = i + "m";
-                    if (data.xms.StartsWith(content))
+                    if (data.xmsx.StartsWith(content))
                     {
                         currIndex = totalIndex;
                     }
@@ -126,21 +131,17 @@ namespace StarsectorLTool
                 Environment.Exit(0);
             }
         }
-
+        /// <summary>
+        /// 写入Vmparams。
+        /// </summary>
         void WriteVmparams()
         {
             var data = Global.VM_DATA;
             ComboBoxItem sitem = combo_xm.SelectedItem as ComboBoxItem;
-            StringBuilder sb = new StringBuilder();
-            sb.Append(data.beforeXms);
-            sb.Append("-Xms");
-            sb.Append(sitem.Content);
-            sb.Append("-Xmx");
-            sb.Append(sitem.Content);
-            sb.Append(data.afterAndContainXss);
+            string targetSetting = ((string)sitem.Content).Trim();
             try
             {
-                File.WriteAllText(Global.VM_PATH, sb.ToString());
+                File.WriteAllText(Global.VM_PATH, VmparamsData.ReplaceXMSetting(data, targetSetting));
                 MessageBox.Show("设置成功！", "恭喜", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             catch
@@ -150,19 +151,7 @@ namespace StarsectorLTool
             ReadVmparams();
         }
 
-        VmparamsData ParseStringToData(string text)
-        {
-            VmparamsData data = new VmparamsData();
-            var x = text.Split(new string[] { "-Xms" }, StringSplitOptions.RemoveEmptyEntries);
-            data.beforeXms = x[0];
-            x = x[1].Split(new string[] { "-Xmx" }, StringSplitOptions.RemoveEmptyEntries);
-            data.xms = x[0];
-            x = x[1].Split(new string[] { "-Xss" }, StringSplitOptions.RemoveEmptyEntries);
-            data.xmx = x[0];
-            data.afterAndContainXss = "-Xss" + x[1];
-            data.rawVm = text;
-            return data;
-        }
+
         /// <summary>
         /// 检查更新
         /// </summary>
