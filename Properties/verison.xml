@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<item>
+<app>
+  <files>
+    <string>Starsector L.Tool.exe</string>
+  </files>
   <version>0.1.0.3</version>
-  <url>https://raw.githubusercontent.com/TruthOriginem/Starsector-L.Tool/master/ReleaseZip/Release.zip</url>
-</item>
+  <info>
+    <string>1. 加入离线使用功能，无网络连接时也使用软件的自动更换壁纸功能</string>
+    <string>2. 重新设计关于界面，加入软件源码直达功能</string>
+  </info>
+</app>

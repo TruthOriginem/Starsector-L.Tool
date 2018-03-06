@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,8 +22,7 @@ namespace StarsectorLTool
         {
             InitializeComponent();
             Global.STARSECTOR_EXE_PATH = Directory.GetCurrentDirectory() + "\\" + "starsector.exe";
-
-
+            checkUpdate();
             if (!File.Exists(Global.STARSECTOR_EXE_PATH))
             {
                 lab_vmTips.Content = "-请将本应用放在远行星号根目录-";
@@ -57,6 +57,9 @@ namespace StarsectorLTool
                 }
                 ReadVmparams();
             }
+
+
+
         }
         /// <summary>
         /// 开启游戏。
@@ -159,6 +162,28 @@ namespace StarsectorLTool
             data.afterAndContainXss = "-Xss" + x[1];
             data.rawVm = text;
             return data;
+        }
+        /// <summary>
+        /// 检查更新
+        /// </summary>
+        private void checkUpdate()
+        {
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StarsectorLTool.sslt_autoUpdate.exe"))
+            {
+                Byte[] b = new Byte[stream.Length];
+                stream.Read(b, 0, b.Length);
+                string s = System.IO.Path.GetTempPath() + "sslt_autoUpdate.exe";
+                if (File.Exists(s))
+                    File.Delete(s);
+                using (FileStream f = File.Create(s))
+                {
+                    f.Write(b, 0, b.Length);
+                }
+                string args = "https://raw.githubusercontent.com/TruthOriginem/Starsector-L.Tool/master/Properties/verison.xml " +
+                    Assembly.GetExecutingAssembly().GetName().Version.ToString() + " " +
+                   Process.GetCurrentProcess().MainModule.FileName;
+                Process.Start(s, args);
+            }
         }
 
         private void Btn_Help_Click(object sender, RoutedEventArgs e)
