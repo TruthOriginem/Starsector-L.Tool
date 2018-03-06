@@ -1,8 +1,8 @@
-﻿using AutoUpdaterDotNET;
-using StarsectorLTool.Src.Global;
+﻿using StarsectorLTool.Src.Global;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -57,7 +57,6 @@ namespace StarsectorLTool
                 }
                 ReadVmparams();
             }
-            AutoUpdater.Start(Global.VERSION_URL);
         }
         /// <summary>
         /// 开启游戏。
@@ -171,5 +170,6 @@ namespace StarsectorLTool
                 "\n\n4G(4096m)内存：大多数mod组合需要在4G内存下运行；只有一些最疯狂mod组合会超过这个（一打或更多的势力，加上Nexerelin大乱斗和DynaSector势力开局）。推荐给那些有着8G系统内存的人。" +
                 "\n\n6G(6144m)内存：就算你同时启用了所有mod，6G应该还是足够的。并不推荐这个配置，除非你有成吨的mod，并且你也有12G以上的系统内存。", "我该分配多少内存？");
         }
+
     }
 }
