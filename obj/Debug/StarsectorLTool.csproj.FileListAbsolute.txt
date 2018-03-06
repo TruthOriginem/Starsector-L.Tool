@@ -28,3 +28,4 @@ D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.exe
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.pdb
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ProgressDialog.baml
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ProgressDialog.g.cs
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.csprojResolveAssemblyReference.cache

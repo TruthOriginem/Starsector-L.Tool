@@ -14,10 +14,13 @@ namespace StarsectorLTool
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static SolidColorBrush TRUE_GAME_BRUSH = new SolidColorBrush(Color.FromRgb(185, 255, 174));
+        private static SolidColorBrush FALSE_GAME_BRUSH = new SolidColorBrush(Color.FromRgb(255, 60, 60));
         public MainWindow()
         {
             InitializeComponent();
             Global.STARSECTOR_EXE_PATH = Directory.GetCurrentDirectory() + "\\" + "starsector.exe";
+
 
             if (!File.Exists(Global.STARSECTOR_EXE_PATH))
             {
@@ -33,6 +36,24 @@ namespace StarsectorLTool
                 lab_vmTips.Content = "-已检测到vmparams:感谢使用远行星号L.Tool工具-";
                 lab_vmTips.Foreground = Brushes.Green;
                 Global.VM_PATH = path;
+                if (Global.InitRegisterData())
+                {
+                    lab_ModAmount.Content = Global.SS_REGISTER_DATA.modAmount;
+                    expa_PaiedGameCheck.IsEnabled = true;
+                    if (!Global.SS_REGISTER_DATA.isGameLegal)
+                    {
+                        expa_PaiedGameCheck.Header = "你的游戏可能是盗版。";
+                        expa_PaiedGameCheck.ToolTip = "你的注册表中并没有记录游戏序列码。";
+                        expa_PaiedGameCheck.Foreground = FALSE_GAME_BRUSH;
+                    }
+                    else
+                    {
+                        expa_PaiedGameCheck.Header = "注册表中存在序列码。";
+                        expa_PaiedGameCheck.ToolTip = "请以管理员身份运行本程序以获得你在该电脑上存储的的序列码。";
+                        expa_PaiedGameCheck.Foreground = TRUE_GAME_BRUSH;
+                    }
+                    lab_SerialKey.Content = Global.SS_REGISTER_DATA.serialKey;
+                }
                 ReadVmparams();
             }
         }
@@ -51,6 +72,7 @@ namespace StarsectorLTool
                     Process.Start(processStartInfo);
                     if (ckb_ExitAfterGame.IsChecked ?? true)
                     {
+
                         Environment.Exit(0);
                     }
                 }
@@ -85,11 +107,11 @@ namespace StarsectorLTool
                 {
                     var item = new ComboBoxItem();
                     var content = i + "m";
-                    item.Content = content;
                     if (data.xms.StartsWith(content))
                     {
                         currIndex = totalIndex;
                     }
+                    item.Content = content + " ";
                     combo_xm.Items.Add(item);
                     totalIndex++;
                 }
