@@ -179,10 +179,7 @@ namespace StarsectorLTool
                 {
                     f.Write(b, 0, b.Length);
                 }
-                string args = "https://raw.githubusercontent.com/TruthOriginem/Starsector-L.Tool/master/bin/release/ " +
-                    Assembly.GetExecutingAssembly().GetName().Version.ToString() + " " +
-                    "https://raw.githubusercontent.com/TruthOriginem/Starsector-L.Tool/master/Properties/verison.xml " +
-                   Directory.GetCurrentDirectory();
+                string args = Assembly.GetExecutingAssembly().GetName().Version.ToString() + " " + Directory.GetCurrentDirectory();
                 Process.Start(s, args);
             }
         }

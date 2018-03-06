@@ -3,10 +3,9 @@
   <files>
     <string>Starsector L.Tool.exe</string>
   </files>
-  <version>0.1.0.3</version>
+  <version>0.1.0.4</version>
   <size>240</size>
   <info>
-    <string>1. 加入离线使用功能，无网络连接时也使用软件的自动更换壁纸功能</string>
-    <string>2. 重新设计关于界面，加入软件源码直达功能</string>
+    <string>1. 加入自动更新功能</string>
   </info>
 </app>
