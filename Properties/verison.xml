@@ -3,9 +3,9 @@
   <files>
     <string>Starsector L.Tool.exe</string>
   </files>
-  <version>0.1.0.4</version>
+  <version>0.1.0.5</version>
   <size>240</size>
   <info>
-    <string>1. 加入自动更新功能</string>
+    <string>1. 调整自动更新功能</string>
   </info>
 </app>
