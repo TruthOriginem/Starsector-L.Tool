@@ -18,12 +18,16 @@ namespace StarsectorLTool
     {
         private static SolidColorBrush TRUE_GAME_BRUSH = new SolidColorBrush(Color.FromRgb(185, 255, 174));
         private static SolidColorBrush FALSE_GAME_BRUSH = new SolidColorBrush(Color.FromRgb(255, 60, 60));
+        private Process autoUpdateProcess;
         public MainWindow()
         {
             InitializeComponent();
-            Global.STARSECTOR_EXE_PATH = Directory.GetCurrentDirectory() + "\\" + "starsector.exe";
+            //获取根目录的starsector.exe
+            Global.Starsector_exe_path = Directory.GetCurrentDirectory() + "\\" + "starsector.exe";
+            //检查更新
             checkUpdate();
-            if (!File.Exists(Global.STARSECTOR_EXE_PATH))
+            //如果根目录不存在starsector.exe，关闭功能
+            if (!File.Exists(Global.Starsector_exe_path))
             {
                 lab_vmTips.Content = "-请将本应用放在远行星号根目录-";
                 Apply.IsEnabled = false;
@@ -36,12 +40,12 @@ namespace StarsectorLTool
             {
                 lab_vmTips.Content = "-已检测到vmparams:感谢使用远行星号L.Tool工具-";
                 lab_vmTips.Foreground = Brushes.Green;
-                Global.VM_PATH = path;
+                Global.Vm_path = path;
                 if (Global.InitRegisterData())
                 {
-                    lab_ModAmount.Content = Global.SS_REGISTER_DATA.modAmount;
+                    lab_ModAmount.Content = Global.Ss_registerData.modAmount;
                     expa_PaiedGameCheck.IsEnabled = true;
-                    if (!Global.SS_REGISTER_DATA.isGameLegal)
+                    if (!Global.Ss_registerData.isGameLegal)
                     {
                         expa_PaiedGameCheck.Header = "你的游戏可能是盗版。";
                         expa_PaiedGameCheck.ToolTip = "你的注册表中并没有记录游戏序列码。";
@@ -53,7 +57,7 @@ namespace StarsectorLTool
                         expa_PaiedGameCheck.ToolTip = "请以管理员身份运行本程序以获得你在该电脑上存储的的序列码。";
                         expa_PaiedGameCheck.Foreground = TRUE_GAME_BRUSH;
                     }
-                    lab_SerialKey.Content = Global.SS_REGISTER_DATA.serialKey;
+                    lab_SerialKey.Content = Global.Ss_registerData.serialKey;
                 }
                 ReadVmparams();
             }
@@ -68,11 +72,11 @@ namespace StarsectorLTool
         /// <param name="e"></param>
         private void StartGame(object sender, RoutedEventArgs e)
         {
-            if (Global.VM_PATH != null)
+            if (Global.Vm_path != null)
             {
                 try
                 {
-                    ProcessStartInfo processStartInfo = new ProcessStartInfo(Global.STARSECTOR_EXE_PATH);
+                    ProcessStartInfo processStartInfo = new ProcessStartInfo(Global.Starsector_exe_path);
                     Process.Start(processStartInfo);
                     if (ckb_ExitAfterGame.IsChecked ?? true)
                     {
@@ -103,9 +107,9 @@ namespace StarsectorLTool
         {
             try
             {
-                string all = File.ReadAllText(Global.VM_PATH);
+                string all = File.ReadAllText(Global.Vm_path);
                 var data = VmparamsData.ParseStringToData(all);
-                Global.VM_DATA = data;
+                Global.Vm_data = data;
                 xms_tn.Content = data.xmsx;
                 xmx_tn.Content = data.xmsx;
 
@@ -136,12 +140,14 @@ namespace StarsectorLTool
         /// </summary>
         void WriteVmparams()
         {
-            var data = Global.VM_DATA;
+            var data = Global.Vm_data;
+            //获取当前选择的内存条目的Content
             ComboBoxItem sitem = combo_xm.SelectedItem as ComboBoxItem;
+            //去除多余空格来替换对应条目
             string targetSetting = ((string)sitem.Content).Trim();
             try
             {
-                File.WriteAllText(Global.VM_PATH, VmparamsData.ReplaceXMSetting(data, targetSetting));
+                File.WriteAllText(Global.Vm_path, VmparamsData.ReplaceXMSetting(data, targetSetting));
                 MessageBox.Show("设置成功！", "恭喜", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             catch
@@ -157,6 +163,7 @@ namespace StarsectorLTool
         /// </summary>
         private void checkUpdate()
         {
+            //先把内嵌的自动更新exe释放出来
             using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StarsectorLTool.sslt_autoUpdate.exe"))
             {
                 Byte[] b = new Byte[stream.Length];
@@ -164,14 +171,24 @@ namespace StarsectorLTool
                 string s = System.IO.Path.GetTempPath() + "sslt_autoUpdate.exe";
                 if (File.Exists(s))
                     File.Delete(s);
+                //创建文件并用文件流往里写入相关数据，之后释放文件流
                 using (FileStream f = File.Create(s))
                 {
                     f.Write(b, 0, b.Length);
                 }
                 string args = Assembly.GetExecutingAssembly().GetName().Version.ToString() + " " + Directory.GetCurrentDirectory();
-                Process.Start(s, args);
+                //打开自动更新exe
+                autoUpdateProcess = Process.Start(s, args);
             }
         }
+
+        //protected override void OnClosed(EventArgs e)
+        //{
+        //    if(autoUpdateProcess!=null && !autoUpdateProcess.HasExited)
+        //    {
+        //        autoUpdateProcess.Kill();
+        //    }
+        //}
 
         private void Btn_Help_Click(object sender, RoutedEventArgs e)
         {
