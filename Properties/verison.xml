@@ -3,10 +3,9 @@
   <files>
     <string>Starsector L.Tool.exe</string>
   </files>
-  <version>0.1.0.6</version>
+  <version>0.1.0.7</version>
   <size>240</size>
   <info>
-    <string>1. 调整文件结构</string>
-    <string>2. 调整程序窗口大小</string>
+    <string>1.调整用户体验。</string>
   </info>
 </app>

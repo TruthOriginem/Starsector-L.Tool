@@ -74,6 +74,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Settings.cs" />
     <Compile Include="Src\Global\Global.cs" />
     <Compile Include="Src\ProgressDialogHelper.cs" />
     <Compile Include="Windows\ProgressDialog.xaml.cs">

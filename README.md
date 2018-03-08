@@ -1,6 +1,6 @@
 # Starsector L.Tool
 ----
-### version 0.1.0.5-alpha
+### version 0.1.0.7-alpha
 ----
 - `WPF`开发，Windows平台，需要`.Net Framework 4.0`支持。
 - 给那些`不怎么擅长于电脑`的人用，修改远行星号运行内存的小工具。  

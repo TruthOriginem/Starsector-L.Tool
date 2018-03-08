@@ -16,9 +16,14 @@ namespace StarsectorLTool
     /// </summary>
     public partial class MainWindow : Window
     {
+        //能检测到序列码-颜色
         private static SolidColorBrush TRUE_GAME_BRUSH = new SolidColorBrush(Color.FromRgb(185, 255, 174));
+        //不能检测序列码-颜色
         private static SolidColorBrush FALSE_GAME_BRUSH = new SolidColorBrush(Color.FromRgb(255, 60, 60));
         private Process autoUpdateProcess;
+        private int recordComboItemIndex;
+        public string Version { get => "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString(); }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,7 +35,6 @@ namespace StarsectorLTool
             if (!File.Exists(Global.Starsector_exe_path))
             {
                 lab_vmTips.Content = "-请将本应用放在远行星号根目录-";
-                Apply.IsEnabled = false;
                 combo_xm.IsEnabled = false;
                 btn_StartGame.IsEnabled = false;
                 return;
@@ -62,6 +66,7 @@ namespace StarsectorLTool
                 ReadVmparams();
             }
 
+            btn_Apply.IsEnabled = false;
 
 
         }
@@ -129,6 +134,7 @@ namespace StarsectorLTool
                     totalIndex++;
                 }
                 combo_xm.SelectedIndex = currIndex;
+                recordComboItemIndex = currIndex;
             }
             catch
             {
@@ -199,6 +205,14 @@ namespace StarsectorLTool
                 "\n\n4G(4096m)内存：大多数mod组合需要在4G内存下运行；只有一些最疯狂mod组合会超过这个（一打或更多的势力，加上Nexerelin大乱斗和DynaSector势力开局）。推荐给那些有着8G系统内存的人。" +
                 "\n\n6G(6144m)内存：就算你同时启用了所有mod，6G应该还是足够的。并不推荐这个配置，除非你有成吨的mod，并且你也有12G以上的系统内存。", "我该分配多少内存？");
         }
-
+        /// <summary>
+        /// 一旦更改设置判断应用按钮是否需要启用
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void combo_xm_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btn_Apply.IsEnabled = combo_xm.SelectedIndex != recordComboItemIndex;
+        }
     }
 }
