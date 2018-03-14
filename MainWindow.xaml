@@ -10,9 +10,9 @@
         <Grid.Background>
             <ImageBrush ImageSource="Image/bg.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Button x:Name="btn_Apply" Content="应用" HorizontalAlignment="Center" Margin="143,0,133.4,114.6" VerticalAlignment="Bottom" Width="118" Height="34" Click="Apply_Click" FontSize="14" IsEnabled="False"/>
+        <Button x:Name="btn_Apply" Content="应用" HorizontalAlignment="Center" Margin="143,0,133.4,106.6" VerticalAlignment="Bottom" Width="118" Height="34" Click="Apply_Click" FontSize="14" IsEnabled="False"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="29" Margin="0" VerticalAlignment="Bottom" Width="239" Source="Image/tripad_bot_left_decor_extended.png"/>
-        <Grid x:Name="grid_NowSettingGrid" Margin="9,64,10.4,222.6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="375" Height="164">
+        <Grid x:Name="grid_NowSettingGrid" Margin="10,95,9.4,191.6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="375" Height="164">
             <Label x:Name="xmx_t" Content="最大内存：" HorizontalAlignment="Left" Margin="46,92,0,0" VerticalAlignment="Top" Width="79" Background="{x:Null}" ToolTip="默认1536mb。在游戏过程中可以分配给Java的最大内存。" FontSize="14">
                 <Label.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -29,7 +29,6 @@
                     </LinearGradientBrush>
                 </Label.Foreground>
             </Label>
-            <Label x:Name="lab_NowSetting" Content="当前设置" Margin="0,10,0,0" VerticalAlignment="Top" Width="80" Height="38" Foreground="#FFD6E5FF" FontSize="16" HorizontalContentAlignment="Center" BorderBrush="White" Background="{x:Null}" RenderTransformOrigin="0.261,0.139" HorizontalAlignment="Center"/>
             <Label x:Name="xms_tn" HorizontalAlignment="Left" Margin="110,47,0,0" VerticalAlignment="Top" Width="68" Background="{x:Null}" Height="30" Content="1535mb" FontSize="14">
                 <Label.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -53,17 +52,10 @@
                     <Label x:Name="lab_SerialKey" Content="SerialKey" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="10" FontWeight="Bold" FontStyle="Italic"/>
                 </Grid>
             </Expander>
-            <Border BorderThickness="2,3,2,2" Height="156" Width="375" CornerRadius="10" Opacity="0.4">
-                <Border.BorderBrush>
-                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                        <GradientStop Color="#FFB4FF75" Offset="1"/>
-                        <GradientStop Color="#FF7DD6FF"/>
-                    </LinearGradientBrush>
-                </Border.BorderBrush>
-            </Border>
+            <GroupBox Header="当前设置" Margin="0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Content="" Foreground="#FF98C7FF" Panel.ZIndex="-3" BorderBrush="#FF71CAFF" FontSize="16"/>
         </Grid>
-        <Label x:Name="lab_vmTips" Content="-未检测到vmparams-" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" Height="34" Width="394" Background="{x:Null}" Foreground="Red" FontStyle="Italic" HorizontalContentAlignment="Center" FontSize="14"/>
-        <Label x:Name="xms_s" HorizontalAlignment="Left" Margin="73,242,0,0" VerticalAlignment="Top" Width="87" Background="{x:Null}" Height="30" Content="设置内存：" ToolTip="实际上最大内存和最小内存最好趋于一致。" FontSize="16">
+        <Label x:Name="lab_vmTips" Content="-未检测到vmparams-" HorizontalAlignment="Center" Margin="0,26,0.4,0" VerticalAlignment="Top" Height="34" Width="394" Background="{x:Null}" Foreground="Red" FontStyle="Italic" HorizontalContentAlignment="Center" FontSize="14"/>
+        <Label x:Name="xms_s" HorizontalAlignment="Left" Margin="75,265,0,0" VerticalAlignment="Top" Width="87" Background="{x:Null}" Height="30" Content="设置内存：" ToolTip="实际上最大内存和最小内存最好趋于一致。" FontSize="16">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF99FAFF" Offset="0"/>
@@ -71,7 +63,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <ComboBox x:Name="combo_xm" Margin="165,248,133.4,0" VerticalAlignment="Top" RenderTransformOrigin="0.604,0.5" SelectionChanged="combo_xm_SelectionChanged"/>
+        <ComboBox x:Name="combo_xm" Margin="167,271,131.4,0" VerticalAlignment="Top" RenderTransformOrigin="0.604,0.5" SelectionChanged="combo_xm_SelectionChanged"/>
         <Label x:Name="sign" Content="Originem" VerticalAlignment="Bottom" FontSize="9" Background="{x:Null}" Height="22" Width="51" HorizontalAlignment="Right" Margin="0,0,0.4,-0.4">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -80,8 +72,8 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label Content="将鼠标移动到个别用语上以获得提示" Height="25" Margin="50,34,52.4,0" Width="292" Background="{x:Null}" Foreground="#FF898989" FontSize="10" VerticalAlignment="Top" RenderTransformOrigin="0.35,0.406" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button x:Name="btn_StartGame" Content="启动游戏" HorizontalAlignment="Center" Margin="143,0,133.4,67.6" VerticalAlignment="Bottom" Width="118" Height="34" Click="StartGame" HorizontalContentAlignment="Center" FontSize="14" Background="#FFB2F1FF" BorderThickness="3">
+        <Label Content="将鼠标移动到个别用语上以获得提示" Height="24" Margin="50,65,52.4,0" Width="292" Background="{x:Null}" Foreground="#FF898989" FontSize="10" VerticalAlignment="Top" RenderTransformOrigin="0.35,0.406" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="btn_StartGame" Content="启动游戏" HorizontalAlignment="Center" Margin="143,0,133.4,59.6" VerticalAlignment="Bottom" Width="118" Height="34" Click="StartGame" HorizontalContentAlignment="Center" FontSize="14" Background="#FFB2F1FF" BorderThickness="3">
             <Button.BorderBrush>
                 <RadialGradientBrush>
                     <GradientStop Color="White" Offset="0.677"/>
@@ -90,8 +82,11 @@
             </Button.BorderBrush>
         </Button>
         <CheckBox x:Name="ckb_ExitAfterGame" Content="启动后关闭本程序" Height="25" Margin="138,0,133.4,21.6" VerticalAlignment="Bottom" Width="123" Foreground="#FFBEF9FF" IsChecked="True" BorderBrush="#FF525D6C" Background="White"/>
-        <Button x:Name="btn_Help" Content="帮助" HorizontalAlignment="Left" Height="22" Margin="291,248,0,0" VerticalAlignment="Top" Width="33" Background="#FFCAE4AA" Click="Btn_Help_Click"/>
+        <Button x:Name="btn_Help" Content="帮助" HorizontalAlignment="Left" Height="22" Margin="293,271,0,0" VerticalAlignment="Top" Width="33" Background="#FFCAE4AA" Click="Btn_Help_Click"/>
         <Label Content="{Binding Version, ElementName=window}" HorizontalAlignment="Right" Margin="0,0,52.4,-0.4" VerticalAlignment="Bottom" Width="101" Foreground="#FFD7FFE0" FontSize="10"/>
+        <Menu Height="18" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="513" Margin="0,0,-118.6,0" VerticalContentAlignment="Top">
+            <MenuItem Header="关于"  Click="MenuItem_About_Click" />
+        </Menu>
 
     </Grid>
 </Window>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.IO;
 using System.Security.Principal;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -43,6 +44,10 @@ namespace StarsectorLTool.Src.Global
                 Ss_registerData.serialKey = serialKey;
             }
             return true;
+        }
+        public static string GetCurrentDirectoryPath()
+        {
+            return Directory.GetCurrentDirectory();
         }
     }
     struct VmparamsData

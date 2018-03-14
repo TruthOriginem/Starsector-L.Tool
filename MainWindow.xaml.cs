@@ -1,4 +1,5 @@
 ﻿using StarsectorLTool.Src.Global;
+using StarsectorLTool.Windows;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -29,6 +30,8 @@ namespace StarsectorLTool
             InitializeComponent();
             //获取根目录的starsector.exe
             Global.Starsector_exe_path = Directory.GetCurrentDirectory() + "\\" + "starsector.exe";
+//            Console.WriteLine(GetType().Assembly.Location);
+
             //检查更新
             checkUpdate();
             //如果根目录不存在starsector.exe，关闭功能
@@ -182,8 +185,10 @@ namespace StarsectorLTool
                 {
                     f.Write(b, 0, b.Length);
                 }
-                string args = Assembly.GetExecutingAssembly().GetName().Version.ToString() + " " + Directory.GetCurrentDirectory();
-                //打开自动更新exe
+                string fileLocation = GetType().Assembly.Location.Replace(' ','+');
+                string args = Assembly.GetExecutingAssembly().GetName().Version.ToString() + "|" + fileLocation;
+                
+                    //打开自动更新exe
                 autoUpdateProcess = Process.Start(s, args);
             }
         }
@@ -213,6 +218,18 @@ namespace StarsectorLTool
         private void combo_xm_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             btn_Apply.IsEnabled = combo_xm.SelectedIndex != recordComboItemIndex;
+        }
+
+        private void MenuItem_About_Click(object sender, RoutedEventArgs e)
+        {
+            var aboutWindow = new AboutWindow();
+            aboutWindow.Owner = this;
+            aboutWindow.ShowDialog();
+        }
+
+        private void MenuItem_CheckUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            checkUpdate();
         }
     }
 }

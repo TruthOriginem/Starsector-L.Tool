@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -29,6 +30,12 @@ namespace StarsectorLTool
             if (!ret)
             {
                 MessageBox.Show("已有一个程序运行");
+                Environment.Exit(0);
+            }
+
+            var process = Process.GetProcessesByName("sslt_autoUpdate");
+            if (process != null && process.Length > 0)
+            {
                 Environment.Exit(0);
             }
             //Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
