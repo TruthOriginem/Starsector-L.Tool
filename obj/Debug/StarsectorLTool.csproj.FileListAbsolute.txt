@@ -35,3 +35,5 @@ D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.appli
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\AboutWindow.g.cs
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\AboutWindow.baml
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.csprojResolveAssemblyReference.cache
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ModManagerWindow.g.cs
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ModManagerWindow.baml

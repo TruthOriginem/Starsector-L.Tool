@@ -34,5 +34,17 @@ namespace StarsectorLTool.Properties {
                 this["starsector_path"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ifAutoUpdate {
+            get {
+                return ((bool)(this["ifAutoUpdate"]));
+            }
+            set {
+                this["ifAutoUpdate"] = value;
+            }
+        }
     }
 }

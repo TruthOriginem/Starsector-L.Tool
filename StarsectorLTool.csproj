@@ -98,9 +98,15 @@
     <Compile Include="Settings.cs" />
     <Compile Include="Src\Global\Global.cs" />
     <Compile Include="Src\Global\ModManager.cs" />
+    <Compile Include="Src\Mod\BaseModInfo.cs" />
+    <Compile Include="Src\Mod\ModInfos\GraphicsLibModInfo.cs" />
     <Compile Include="Src\ProgressDialogHelper.cs" />
+    <Compile Include="Src\UI\ConfigItemCheckBox.cs" />
     <Compile Include="Windows\AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ModManagerWindow.xaml.cs">
+      <DependentUpon>ModManagerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ProgressDialog.xaml.cs">
       <DependentUpon>ProgressDialog.xaml</DependentUpon>
@@ -118,6 +124,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Windows\AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ModManagerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

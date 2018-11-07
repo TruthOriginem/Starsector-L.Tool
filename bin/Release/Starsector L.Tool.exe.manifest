@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Starsector L.Tool.exe" size="168360">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Starsector L.Tool.exe" size="163752">
       <assemblyIdentity name="Starsector L.Tool" version="0.1.0.9" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>OVyqNdeQsdoBQPxaMLlTEsG9reg=</dsig:DigestValue>
+        <dsig:DigestValue>++4J+JOFSkvGj4UHK6b02E891Ls=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

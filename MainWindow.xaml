@@ -64,7 +64,7 @@
             </Label.Foreground>
         </Label>
         <ComboBox x:Name="combo_xm" Margin="167,271,131.4,0" VerticalAlignment="Top" RenderTransformOrigin="0.604,0.5" SelectionChanged="combo_xm_SelectionChanged"/>
-        <Label x:Name="sign" Content="Originem" VerticalAlignment="Bottom" FontSize="9" Background="{x:Null}" Height="22" Width="51" HorizontalAlignment="Right" Margin="0,0,0.4,-0.4">
+        <Label x:Name="sign" Content="Originem" VerticalAlignment="Bottom" FontSize="9" Background="{x:Null}" Height="22" Width="51" HorizontalAlignment="Right" Margin="0,0,-3.6,14.6">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF9000FF" Offset="0"/>
@@ -84,9 +84,11 @@
         <CheckBox x:Name="ckb_ExitAfterGame" Content="启动后关闭本程序" Height="25" Margin="138,0,133.4,21.6" VerticalAlignment="Bottom" Width="123" Foreground="#FFBEF9FF" IsChecked="True" BorderBrush="#FF525D6C" Background="White"/>
         <Button x:Name="btn_Help" Content="帮助" HorizontalAlignment="Left" Height="22" Margin="293,271,0,0" VerticalAlignment="Top" Width="33" Background="#FFCAE4AA" Click="Btn_Help_Click"/>
         <Label Content="{Binding Version, ElementName=window}" HorizontalAlignment="Right" Margin="0,0,52.4,-0.4" VerticalAlignment="Bottom" Width="101" Foreground="#FFD7FFE0" FontSize="10"/>
-        <Menu Height="18" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="513" Margin="0,0,-118.6,0" VerticalContentAlignment="Top">
+        <Menu Height="18" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="394" VerticalContentAlignment="Top">
             <MenuItem Header="关于"  Click="MenuItem_About_Click" />
         </Menu>
+        <Button Content="进行Mod配置" HorizontalAlignment="Left" Height="32" Margin="284,344,0,0" VerticalAlignment="Top" Width="87" Click="ModConfig_Click" Visibility="Hidden"/>
+        <CheckBox x:Name="ckb_AutoUpdateConfig" Content="开启自动更新" Height="25" Margin="298,0,0.4,-5.4" VerticalAlignment="Bottom" Foreground="#FFBDBDBD" IsChecked="True" BorderBrush="#FF525D6C" Background="White" Click="ckb_AutoUpdateConfig_Checked"/>
 
     </Grid>
 </Window>

@@ -9,6 +9,9 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Net.NetworkInformation;
+
+
 
 namespace StarsectorLTool
 {
@@ -30,10 +33,14 @@ namespace StarsectorLTool
             InitializeComponent();
             //获取根目录的starsector.exe
             Global.Starsector_exe_path = Directory.GetCurrentDirectory() + "\\" + "starsector.exe";
-//            Console.WriteLine(GetType().Assembly.Location);
+            //            Console.WriteLine(GetType().Assembly.Location);
 
             //检查更新
-            checkUpdate();
+            ckb_AutoUpdateConfig.IsChecked = Properties.Settings.Default.ifAutoUpdate;
+            if (Properties.Settings.Default.ifAutoUpdate)
+            {
+                checkUpdate();
+            }
             //如果根目录不存在starsector.exe，关闭功能
             if (!File.Exists(Global.Starsector_exe_path))
             {
@@ -185,10 +192,10 @@ namespace StarsectorLTool
                 {
                     f.Write(b, 0, b.Length);
                 }
-                string fileLocation = GetType().Assembly.Location.Replace(' ','+');
+                string fileLocation = GetType().Assembly.Location.Replace(' ', '+');
                 string args = Assembly.GetExecutingAssembly().GetName().Version.ToString() + "|" + fileLocation;
-                
-                    //打开自动更新exe
+
+                //打开自动更新exe
                 autoUpdateProcess = Process.Start(s, args);
             }
         }
@@ -231,5 +238,22 @@ namespace StarsectorLTool
         {
             checkUpdate();
         }
+
+        private void ModConfig_Click(object sender, RoutedEventArgs e)
+        {
+            ModManagerWindow window = new ModManagerWindow();
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void ckb_AutoUpdateConfig_Checked(object sender, RoutedEventArgs e)
+        {
+            if (Properties.Settings.Default.ifAutoUpdate != ckb_AutoUpdateConfig.IsChecked)
+            {
+                Properties.Settings.Default.ifAutoUpdate = (bool)ckb_AutoUpdateConfig.IsChecked;
+                Properties.Settings.Default.Save();
+            }
+        }
+
     }
 }
