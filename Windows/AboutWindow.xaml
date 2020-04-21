@@ -8,7 +8,7 @@
         Title="关于" Height="200" Width="300" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner">
     <Grid>
         <Button Content="确定" HorizontalAlignment="Left" Height="25" Margin="226,136,0,0" VerticalAlignment="Top" Width="58" Click="Button_Click"/>
-        <TextBlock HorizontalAlignment="Center" Margin="34,83,32,0" TextWrapping="Wrap" Text="本应用程序由远行星号modder及贴吧吧主，欧瑞捷门（Originem）制作。遵循开源协议Apache2.0. 请勿用作商业用途" VerticalAlignment="Top" Width="228"/>
+        <TextBlock HorizontalAlignment="Center" Margin="20,83,18,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256"><Run Text="本应用程序由远行星号modder"/><Run Text="，Fossic论坛坛主之一，"/><Run Text="贴吧吧主，欧瑞捷门（Originem）制作。遵循开源协议Apache2.0. 请勿用作商业用途"/><Run Text="。"/></TextBlock>
         <Image HorizontalAlignment="Center" Height="56" Margin="0,22,0,0" VerticalAlignment="Top" Width="56" Source="/Starsector L.Tool;component/Image/ltool_icon.ico"/>
     </Grid>
 </Window>

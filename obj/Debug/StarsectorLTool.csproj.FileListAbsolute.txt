@@ -12,28 +12,29 @@ C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLToo
 C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.exe
 C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.pdb
 C:\Users\Z6\Documents\Visual Studio 2015\Projects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.g.resources
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\bin\Debug\Starsector L.Tool.exe.config
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\bin\Debug\Starsector L.Tool.exe
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\bin\Debug\Starsector L.Tool.pdb
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ProgressDialog.baml
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\MainWindow.g.cs
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\AboutWindow.g.cs
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ModManagerWindow.g.cs
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ProgressDialog.g.cs
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\App.g.cs
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool_MarkupCompile.cache
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool_MarkupCompile.lref
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\MainWindow.baml
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.g.resources
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.Properties.Resources.resources
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.csproj.GenerateResource.Cache
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.csproj.CoreCompileInputs.cache
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.exe
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.pdb
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ProgressDialog.baml
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ProgressDialog.g.cs
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\bin\Debug\Starsector L.Tool.exe.config
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\bin\Debug\Starsector L.Tool.exe.manifest
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\bin\Debug\Starsector L.Tool.application
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\bin\Debug\Starsector L.Tool.exe
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\bin\Debug\Starsector L.Tool.pdb
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\MainWindow.baml
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\AboutWindow.baml
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ModManagerWindow.baml
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.g.resources
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.Properties.Resources.resources
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.csproj.GenerateResource.cache
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.csproj.CoreCompileInputs.cache
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.exe.manifest
 D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.application
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\AboutWindow.g.cs
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\AboutWindow.baml
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\StarsectorLTool.csprojResolveAssemblyReference.cache
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ModManagerWindow.g.cs
-D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\ModManagerWindow.baml
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.exe
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Starsector L.Tool.pdb
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\SettingsConfigWindow.g.cs
+D:\WpfProjects\StarsectorLTool\StarsectorLTool\obj\Debug\Windows\SettingsConfigWindow.baml

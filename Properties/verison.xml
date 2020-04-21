@@ -3,10 +3,11 @@
   <files>
     <string>Starsector L.Tool.exe</string>
   </files>
-  <version>0.1.0.9</version>
+  <version>0.1.1.0</version>
   <size>240</size>
   <info>
-    <string>1.可以配置是否自动更新。</string>
-    <string>2.断网时不会检测更新。</string>
+    <string>1.修复一些小bug。</string>
+    <string>2.不再自动打勾"自动更新"。</string>
+    <string>3.增加一些小功能。</string>
   </info>
 </app>

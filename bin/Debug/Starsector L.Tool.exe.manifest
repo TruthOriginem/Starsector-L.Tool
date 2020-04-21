@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Image\ltool_icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Starsector L.Tool" version="0.1.0.9" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Starsector L.Tool" version="0.1.1.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="Starsector L.Tool.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Starsector L.Tool.exe" size="168360">
-      <assemblyIdentity name="Starsector L.Tool" version="0.1.0.9" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Starsector L.Tool.exe" size="172544">
+      <assemblyIdentity name="Starsector L.Tool" version="0.1.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>OVyqNdeQsdoBQPxaMLlTEsG9reg=</dsig:DigestValue>
+        <dsig:DigestValue>2wEe/E1NXoG1nyVS8CZM1e6HBGo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

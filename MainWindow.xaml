@@ -10,7 +10,12 @@
         <Grid.Background>
             <ImageBrush ImageSource="Image/bg.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Button x:Name="btn_Apply" Content="应用" HorizontalAlignment="Center" Margin="143,0,133.4,106.6" VerticalAlignment="Bottom" Width="118" Height="34" Click="Apply_Click" FontSize="14" IsEnabled="False"/>
+        <Border BorderBrush="#33FFFFFF" BorderThickness="1" HorizontalAlignment="Left" Height="98" Margin="10,264,0,0" VerticalAlignment="Top" Width="206"/>
+        <Border BorderBrush="#33FFFFFF" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="221,264,0,0" VerticalAlignment="Top" Width="163">
+            <Label Content="-工具-" HorizontalAlignment="Left" Margin="58,5,0,117" BorderBrush="#00000000" Foreground="#FFB0FFB7"/>
+        </Border>
+
+        <Button x:Name="btn_Apply" Content="应用" HorizontalAlignment="Center" Margin="18,0,258.4,105.6" VerticalAlignment="Bottom" Width="118" Height="34" Click="Apply_Click" FontSize="14" IsEnabled="False"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="29" Margin="0" VerticalAlignment="Bottom" Width="239" Source="Image/tripad_bot_left_decor_extended.png"/>
         <Grid x:Name="grid_NowSettingGrid" Margin="10,95,9.4,191.6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="375" Height="164">
             <Label x:Name="xmx_t" Content="最大内存：" HorizontalAlignment="Left" Margin="46,92,0,0" VerticalAlignment="Top" Width="79" Background="{x:Null}" ToolTip="默认1536mb。在游戏过程中可以分配给Java的最大内存。" FontSize="14">
@@ -52,10 +57,10 @@
                     <Label x:Name="lab_SerialKey" Content="SerialKey" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="10" FontWeight="Bold" FontStyle="Italic"/>
                 </Grid>
             </Expander>
-            <GroupBox Header="当前设置" Margin="0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Content="" Foreground="#FF98C7FF" Panel.ZIndex="-3" BorderBrush="#FF71CAFF" FontSize="16"/>
+            <GroupBox Header="当前设置" Margin="0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Content="" Foreground="#FF98C7FF" Panel.ZIndex="-3" BorderBrush="#FF71CAFF" FontSize="16" Height="164" VerticalAlignment="Top"/>
         </Grid>
         <Label x:Name="lab_vmTips" Content="-未检测到vmparams-" HorizontalAlignment="Center" Margin="0,26,0.4,0" VerticalAlignment="Top" Height="34" Width="394" Background="{x:Null}" Foreground="Red" FontStyle="Italic" HorizontalContentAlignment="Center" FontSize="14"/>
-        <Label x:Name="xms_s" HorizontalAlignment="Left" Margin="75,265,0,0" VerticalAlignment="Top" Width="87" Background="{x:Null}" Height="30" Content="设置内存：" ToolTip="实际上最大内存和最小内存最好趋于一致。" FontSize="16">
+        <Label x:Name="xms_s" HorizontalAlignment="Left" Margin="18,271,0,0" VerticalAlignment="Top" Width="87" Background="{x:Null}" Height="30" Content="设置内存：" ToolTip="实际上最大内存和最小内存最好趋于一致。" FontSize="16">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF99FAFF" Offset="0"/>
@@ -63,7 +68,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <ComboBox x:Name="combo_xm" Margin="167,271,131.4,0" VerticalAlignment="Top" RenderTransformOrigin="0.604,0.5" SelectionChanged="combo_xm_SelectionChanged"/>
+        <ComboBox x:Name="combo_xm" Margin="110,277,188.4,0" VerticalAlignment="Top" RenderTransformOrigin="0.604,0.5" SelectionChanged="combo_xm_SelectionChanged"/>
         <Label x:Name="sign" Content="Originem" VerticalAlignment="Bottom" FontSize="9" Background="{x:Null}" Height="22" Width="51" HorizontalAlignment="Right" Margin="0,0,-3.6,14.6">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -72,8 +77,8 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label Content="将鼠标移动到个别用语上以获得提示" Height="24" Margin="50,65,52.4,0" Width="292" Background="{x:Null}" Foreground="#FF898989" FontSize="10" VerticalAlignment="Top" RenderTransformOrigin="0.35,0.406" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button x:Name="btn_StartGame" Content="启动游戏" HorizontalAlignment="Center" Margin="143,0,133.4,59.6" VerticalAlignment="Bottom" Width="118" Height="34" Click="StartGame" HorizontalContentAlignment="Center" FontSize="14" Background="#FFB2F1FF" BorderThickness="3">
+        <Label Content="将鼠标移动到UI上以获得提示" Height="24" Margin="50,65,52.4,0" Width="292" Background="{x:Null}" Foreground="#FF898989" FontSize="10" VerticalAlignment="Top" RenderTransformOrigin="0.35,0.406" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="btn_StartGame" Content="启动游戏" HorizontalAlignment="Center" Margin="50,0,226.4,47.6" VerticalAlignment="Bottom" Width="118" Height="34" Click="StartGame" HorizontalContentAlignment="Center" FontSize="14" Background="#FFB2F1FF" BorderThickness="3">
             <Button.BorderBrush>
                 <RadialGradientBrush>
                     <GradientStop Color="White" Offset="0.677"/>
@@ -81,14 +86,17 @@
                 </RadialGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <CheckBox x:Name="ckb_ExitAfterGame" Content="启动后关闭本程序" Height="25" Margin="138,0,133.4,21.6" VerticalAlignment="Bottom" Width="123" Foreground="#FFBEF9FF" IsChecked="True" BorderBrush="#FF525D6C" Background="White"/>
-        <Button x:Name="btn_Help" Content="帮助" HorizontalAlignment="Left" Height="22" Margin="293,271,0,0" VerticalAlignment="Top" Width="33" Background="#FFCAE4AA" Click="Btn_Help_Click"/>
+        <CheckBox x:Name="ckb_ExitAfterGame" Content="启动后关闭本程序" Height="25" Margin="50,0,221.4,15.6" VerticalAlignment="Bottom" Width="123" Foreground="#FFBEF9FF" IsChecked="True" BorderBrush="#FF525D6C" Background="White"/>
+        <Button x:Name="btn_Help" Content="帮助" HorizontalAlignment="Left" Height="22" Margin="162,318,0,0" VerticalAlignment="Top" Width="44" Background="#FFCAE4AA" Click="Btn_Help_Click"/>
         <Label Content="{Binding Version, ElementName=window}" HorizontalAlignment="Right" Margin="0,0,52.4,-0.4" VerticalAlignment="Bottom" Width="101" Foreground="#FFD7FFE0" FontSize="10"/>
-        <Menu Height="18" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="394" VerticalContentAlignment="Top">
+        <Menu Height="18" HorizontalAlignment="Left" x:Name="menu1" VerticalAlignment="Top" Width="394" VerticalContentAlignment="Top">
             <MenuItem Header="关于"  Click="MenuItem_About_Click" />
         </Menu>
         <Button Content="进行Mod配置" HorizontalAlignment="Left" Height="32" Margin="284,344,0,0" VerticalAlignment="Top" Width="87" Click="ModConfig_Click" Visibility="Hidden"/>
-        <CheckBox x:Name="ckb_AutoUpdateConfig" Content="开启自动更新" Height="25" Margin="298,0,0.4,-5.4" VerticalAlignment="Bottom" Foreground="#FFBDBDBD" IsChecked="True" BorderBrush="#FF525D6C" Background="White" Click="ckb_AutoUpdateConfig_Checked"/>
+        <CheckBox x:Name="ckb_AutoUpdateConfig" Content="开启自动更新" Height="25" Margin="298,0,0.4,-5.4" VerticalAlignment="Bottom" Foreground="#FFBDBDBD" IsChecked="False" BorderBrush="#FF525D6C" Background="White" Click="ckb_AutoUpdateConfig_Checked" Checked="ckb_AutoUpdateConfig_Checked"/>
+        <Button x:Name="btn_CleanUpMissions" Content="清理战役装配" HorizontalAlignment="Left" Margin="248,369,0,0" VerticalAlignment="Top" Width="108" Height="28" ToolTip="更换mod时，战役装配可能会因为载入了被取消的mod的武器、插件而导致战役加载错误，可以通过删除这些装配来进行修复。" Click="Btn_CleanUpMissions_Click"/>
+        <Button x:Name="btn_OpenLog" Content="打开log文件" HorizontalAlignment="Left" Margin="248,299,0,0" VerticalAlignment="Top" Width="108" Height="28" ToolTip="打开最新的log文件。" Click="Btn_OpenLogFile_Click"/>
+        <Button x:Name="btn_CleanLogs" Content="清理log文件" HorizontalAlignment="Left" Margin="248,334,0,0" VerticalAlignment="Top" Width="108" Height="28" ToolTip="删除所有log文件以节省空间，提高加载速度。由于游戏本身会自行清理，所以不推荐使用本功能。" Click="Btn_DeleteLogFiles_Click" Foreground="#FFBF5656"/>
 
     </Grid>
 </Window>
